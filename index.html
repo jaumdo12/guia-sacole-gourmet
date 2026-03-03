@@ -67,57 +67,9 @@ transform:translateY(-5px);
 box-shadow:0 20px 45px rgba(0,0,0,.25);
 }
 
-
-<!-- SEÇÃO DE VÍDEO -->
-<section style="background:#ffffff; text-align:center; padding:100px 20px;">
-    
-    <h2 style="font-size:32px; margin-bottom:30px;">
-        🎥 Assista Antes de Comprar
-    </h2>
-
-    <div style="max-width:900px; margin:0 auto; border-radius:20px; overflow:hidden; box-shadow:0 25px 60px rgba(0,0,0,.15);">
-        
-        <video 
-            id="videoVendas"
-            width="100%" 
-            autoplay 
-            muted 
-            playsinline 
-            controls
-            style="display:block;">
-            
-            <source src="video.mp4" type="video/mp4">
-            Seu navegador não suporta vídeo.
-        </video>
-
-    </div>
-
-    <!-- BOTÃO ESCONDIDO -->
-    <div id="botaoVideo" style="display:none; margin-top:40px;">
-        <a href="#comprar" class="cta-button" style="font-size:20px;">
-            QUERO GARANTIR POR R$ 47 AGORA
-        </a>
-    </div>
-
-</section>
-
-<script>
-const video = document.getElementById("videoVendas");
-const botao = document.getElementById("botaoVideo");
-
-video.addEventListener("ended", function() {
-    botao.style.display = "block";
-});
-</script>
 /* GRID */
-.grid{
-display:grid;
-gap:40px;
-}
-
-.grid-3{
-grid-template-columns:repeat(auto-fit,minmax(260px,1fr));
-}
+.grid{display:grid;gap:40px;}
+.grid-3{grid-template-columns:repeat(auto-fit,minmax(260px,1fr));}
 
 .card{
 background:#fff;
@@ -125,6 +77,15 @@ padding:45px;
 border-radius:25px;
 box-shadow:0 25px 60px rgba(0,0,0,.08);
 text-align:center;
+}
+
+/* VIDEO */
+.video-wrapper{
+max-width:900px;
+margin:40px auto;
+border-radius:25px;
+overflow:hidden;
+box-shadow:0 25px 60px rgba(0,0,0,.15);
 }
 
 /* BONUS */
@@ -177,7 +138,7 @@ border-radius:50px;
 text-decoration:none;
 }
 
-/* PREÇO PREMIUM */
+/* PREÇO */
 .price-section{
 background:
 radial-gradient(circle at top, rgba(230,255,0,0.08), transparent 60%),
@@ -193,10 +154,6 @@ font-size:38px;
 margin-bottom:20px;
 }
 
-.price-box{
-margin-top:40px;
-}
-
 .old-price{
 text-decoration:line-through;
 font-size:30px;
@@ -210,6 +167,8 @@ color:#E6FF00;
 margin:15px 0;
 text-shadow:0 0 20px rgba(230,255,0,.5);
 }
+
+#botaoVideo{display:none;}
 
 footer{
 text-align:center;
@@ -236,6 +195,25 @@ header h1{font-size:28px}
 <a href="#comprar" class="btn">QUERO COMEÇAR AGORA</a>
 </div>
 </header>
+
+<!-- VIDEO -->
+<section>
+<div class="container">
+<h2>🎥 Assista Antes de Comprar</h2>
+
+<div class="video-wrapper">
+<video id="videoVendas" width="100%" autoplay muted playsinline controls>
+<source src="video.mp4" type="video/mp4">
+Seu navegador não suporta vídeo.
+</video>
+</div>
+
+<div id="botaoVideo" style="text-align:center;margin-top:40px;">
+<a href="#comprar" class="btn">QUERO GARANTIR POR R$ 47 AGORA</a>
+</div>
+
+</div>
+</section>
 
 <section>
 <div class="container">
@@ -285,22 +263,25 @@ FALAR COM O SUPORTE
 
 <section id="comprar" class="price-section">
 <div class="container">
-
 <h2>🔥 OFERTA POR TEMPO LIMITADO</h2>
-
-<div class="price-box">
 <div class="old-price">De R$ 97,00</div>
-<div class="new-price">Por apenas R$ 47,00</div>
-</div>
-
+<div class="new-price">R$ 47,00</div>
 <a href="https://pay.kiwify.com.br/Vc9iDMn" class="btn">COMPRAR AGORA</a>
-
 </div>
 </section>
 
 <footer>
 © 2026 - Guia do Sacolé Gourmet
 </footer>
+
+<script>
+const video = document.getElementById("videoVendas");
+const botao = document.getElementById("botaoVideo");
+
+video.addEventListener("ended", function() {
+botao.style.display = "block";
+});
+</script>
 
 </body>
 </html>
