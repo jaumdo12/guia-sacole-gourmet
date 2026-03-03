@@ -67,6 +67,48 @@ transform:translateY(-5px);
 box-shadow:0 20px 45px rgba(0,0,0,.25);
 }
 
+
+<!-- SEÇÃO DE VÍDEO -->
+<section style="background:#ffffff; text-align:center; padding:100px 20px;">
+    
+    <h2 style="font-size:32px; margin-bottom:30px;">
+        🎥 Assista Antes de Comprar
+    </h2>
+
+    <div style="max-width:900px; margin:0 auto; border-radius:20px; overflow:hidden; box-shadow:0 25px 60px rgba(0,0,0,.15);">
+        
+        <video 
+            id="videoVendas"
+            width="100%" 
+            autoplay 
+            muted 
+            playsinline 
+            controls
+            style="display:block;">
+            
+            <source src="video.mp4" type="video/mp4">
+            Seu navegador não suporta vídeo.
+        </video>
+
+    </div>
+
+    <!-- BOTÃO ESCONDIDO -->
+    <div id="botaoVideo" style="display:none; margin-top:40px;">
+        <a href="#comprar" class="cta-button" style="font-size:20px;">
+            QUERO GARANTIR POR R$ 47 AGORA
+        </a>
+    </div>
+
+</section>
+
+<script>
+const video = document.getElementById("videoVendas");
+const botao = document.getElementById("botaoVideo");
+
+video.addEventListener("ended", function() {
+    botao.style.display = "block";
+});
+</script>
 /* GRID */
 .grid{
 display:grid;
